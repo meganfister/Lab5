@@ -1,8 +1,17 @@
-# Lab5
-Laboratory 4. Go Big: Operational Amplifiers 
+# Lab 5
+## Go Big: Operational Amplifiers 
 Aashika Uppala, Megan Fister
-2/24/2025
+
+3/5/2025
+
+### Introduction
+
+### Methods
+
+### Results
+
 Part 1
+```c++
 /*
   Blink
 
@@ -42,10 +51,11 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
   delay(11);                      // wait for a second
 }
-
+```
 
 
 Part 2
+```c++
 /*
   AnalogReadSerial
 
@@ -80,9 +90,10 @@ void loop() {
   delay(sensorValue);                      // wait for a second
 
 }
-
+```
 
 Part 3
+```c++
 /*
   AnalogReadSerial
 
@@ -123,9 +134,10 @@ else{
 //run if false
 }
 }
-
+```
 
 Part 4
+```c++
 /*
   AnalogReadSerial
 
@@ -159,8 +171,9 @@ int mappedvalue = map(sensorValue, 0, 1023, 0, 225);
 
   analogWrite(10, mappedvalue);
 }
+```
 
-Discussion
+### Discussion
 
-Conclusion
+### Conclusion
 
