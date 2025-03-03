@@ -1,5 +1,5 @@
 # Lab 5
-## Go Big: Operational Amplifiers 
+## The Brain: Microcontrollers 
 Aashika Uppala, Megan Fister
 
 3/5/2025
