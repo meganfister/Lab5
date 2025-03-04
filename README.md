@@ -7,7 +7,61 @@ Aashika Uppala, Megan Fister
 ### Introduction
 
 ### Methods
+#### Instruments
+• A 330Ω resistor
 
+• An oscilloscope
+
+• A Computer running Arduino IDE
+
+• SparkFun Inventor’s kit
+
+  o RedBoard
+
+  o Photoresistor
+  
+  o An LED
+  
+  o A 10 kΩ potentiometers
+  
+  o A momentary button
+  
+  o Resistors: 10 kΩ
+#### Objective: Familiarize yourself with the Arduino IDE and Red Board (Arduino UNO).
+Task:
+
+• Upload a program code and successfully blink an LED on your Arduino system.
+
+• Convert analog inputs to digital signals.
+
+• Familiarize yourself with the concept of pulse width modulation.
+##### Part 1 - Blinking an LED
+1. Assemble your RedBoard and breadboard onto the sparkfun base.
+2. Connect the RedBoard to the computer and start the Arduino IDE on the computer.
+3. Select the board Arduino UNO (Tools>Board>Arduino Uno) and the correct COM port (Tools>Port>COM?).
+Figure 1. PWM FOR 0%, 25%, 50%, 75%, AND 100%
+(https://docs.arduino.cc/learn/microcontrollers/analog-output/)
+4. Open the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
+a. What does this program do?
+b. What are the major sections of the computer program and what does each section do?
+
+##### Part 2 – Controlling an LED with a potentiometer
+1. Open the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and run it on the
+Arduino.
+a. Do not take apart your previous circuit and connect your potentiometer to power (5V and Ground)
+with the variable resistance pin connected to A0. This connection is described in the program, the
+example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the
+SparkFun Inventor’s kit book.
+b. Demonstrate this program operating properly using the serial monitor (Tools>Serial Monitor). Verify
+that the Baud Rate on the serial monitor is 9600bps.
+c. Include the code to control the LED and set the blinking time to the value read from the
+potentiometer.
+##### Part 3 – Controlling an LED with a photoresistor
+1. Use the program from part 2 and replace the potentiometer with a photoresistor in series with a 10 kΩ resistor. Connect the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input should be connected to the node between the photodetector and the resistor.
+
+3. Try different objects to block the light on the photoresistor. What are the minimum and maximum analog values you can detect with this circuit?
+
+4. Use an if else statement as shown in the SparkFun Inventor’s kit book to turn on the LED only when the brightness sensed by the photoresistor is low. As a night light would work.
 ### Results
 
 Part 1
@@ -174,6 +228,27 @@ int mappedvalue = map(sensorValue, 0, 1023, 0, 225);
 ```
 
 ### Discussion
+#### Part 1 - Blinking an LED
+Open the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
 
+a. What does this program do?
+
+b. What are the major sections of the computer program and what does each section do?
+
+Your LED flashes with a delay from the uploaded code. Decrease this delay (after both write instructions) until the LED just stops blinking—that is until the light is still blinking but appears to stay constantly illuminated.
+
+a. What is the value of your delay now?
+
+b. What field may this “persistence of vision” play a greater role in?
+
+c. Discuss this further in your lab report.
+#### Part 2 - Controlling an LED with a potentiometer
+a. What is the difference between an analog and a digital signal?
+
+b. In your lab report, list a few examples of real-world examples that can be described by an analog signal. Likewise, what are the two states which can be conveyed by a digital signal?
+
+c. What happens to the Serial Monitor Refresh rate as you move the potentiometer to control the LED blinking time?
+#### Part 3 - 
+a. Does the LED turn on immediately after blocking the light? What about when you remove the object blocking the light, does the LED turn off immediately? Why?
 ### Conclusion
 
