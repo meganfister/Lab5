@@ -262,11 +262,11 @@ c. What happens to the Serial Monitor Refresh rate as you move the potentiometer
 The Serial Monitor refresh rate changes depending on the delay between each reading. As the potentiometer's resistance changes:
 If the delay increases, the serial monitor updates slower.
 If the delay decreases, the serial monitor updates faster.
-#### Part 3 - 
+#### Part 3 - Controlling an LED with a photoresistor
 a. Does the LED turn on immediately after blocking the light? What about when you remove the object blocking the light, does the LED turn off immediately? Why?
 No, the LED does not always turn on or off immediately. This delay happens because: The photoresistor gradually changes resistance instead of instantaneously reacting;
 External light intensity variations may cause minor fluctuations; The circuit may have capacitive effects, leading to a slight delay in response.
-#### Part 4 -
+#### Part 4 - LED dimmer using PWM
 a. Observations:
 The oscilloscope will show a PWM waveform with a varying duty cycle.
 As the potentiometer increases:
