@@ -16,7 +16,7 @@ The purpose of this lab is to explore the fundamentals of microcontrollers using
 
 • SparkFun Inventor’s kit
 
-  o RedBoard
+&nbsp; &nbsp; &nbsp; &nbsp; o RedBoard
 
   o Photoresistor
   
