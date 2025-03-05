@@ -5,7 +5,7 @@ Aashika Uppala, Megan Fister
 3/5/2025
 
 ### Introduction
-
+The purpose of this lab is to explore the fundamentals of microcontrollers using the Arduino RedBoard. Microcontrollers are small computing devices that can process inputs, execute programmed instructions, and control output components. In this experiment, we used the Arduino IDE to program the microcontroller, focusing on key functions such as digital output, analog input, and Pulse Width Modulation (PWM). The primary goal was to control an LED using various input devices, including a potentiometer and a photoresistor. By analyzing different circuit configurations, we gained hands-on experience with converting analog signals to digital outputs and understanding the persistence of vision effect. This lab provided essential knowledge of embedded systems, which are widely used in industrial automation, IoT applications, and consumer electronics.
 ### Methods
 #### Instruments
 • A 330Ω resistor
@@ -238,17 +238,43 @@ b. What are the major sections of the computer program and what does each sectio
 Your LED flashes with a delay from the uploaded code. Decrease this delay (after both write instructions) until the LED just stops blinking—that is until the light is still blinking but appears to stay constantly illuminated.
 
 a. What is the value of your delay now?
-
+11 ms
 b. What field may this “persistence of vision” play a greater role in?
-
+In LED displays and signage, "persistence of vision" can play a greater role by creating smooth scrolling texts and images. 
 c. Discuss this further in your lab report.
+In the lab, when reducing the delay in the LED blink program, the LED eventually appears constantly illuminated rather than visibly blinking. This happens because the human eye can only distinguish individual flashes up to a certain frequency (typically around 60 Hz or 16ms per cycle). When the LED blinks faster than this threshold, the brain perceives it as a steady light rather than a blinking one.
 #### Part 2 - Controlling an LED with a potentiometer
 a. What is the difference between an analog and a digital signal?
+An analog signal is continuous and can take any value within a given range (ex.: sound waves, temperature variations).
+A digital signal is discrete, typically represented as binary (0s and 1s) (ex.: computer data, ON/OFF signals).
 
 b. In your lab report, list a few examples of real-world examples that can be described by an analog signal. Likewise, what are the two states which can be conveyed by a digital signal?
+Analog Examples:
+Sound waves from a microphone.
+Temperature variations measured by a thermometer.
+Light intensity captured by a photoresistor.
+Voltage fluctuations in power supplies.
+Digital Signal States:
+HIGH (1) – Typically 5V in Arduino.
+LOW (0) – Typically 0V in Arduino.
 
 c. What happens to the Serial Monitor Refresh rate as you move the potentiometer to control the LED blinking time?
+The Serial Monitor refresh rate changes depending on the delay between each reading. As the potentiometer's resistance changes:
+If the delay increases, the serial monitor updates slower.
+If the delay decreases, the serial monitor updates faster.
 #### Part 3 - 
 a. Does the LED turn on immediately after blocking the light? What about when you remove the object blocking the light, does the LED turn off immediately? Why?
+No, the LED does not always turn on or off immediately. This delay happens because: The photoresistor gradually changes resistance instead of instantaneously reacting;
+External light intensity variations may cause minor fluctuations; The circuit may have capacitive effects, leading to a slight delay in response.
+#### Part 4 -
+a. Observations:
+The oscilloscope will show a PWM waveform with a varying duty cycle.
+As the potentiometer increases:
+The duty cycle increases.
+The LED brightness increases (closer to full brightness).
+As the potentiometer decreases:
+The duty cycle decreases.
+The LED dims (closer to OFF state).
+The frequency of the PWM signal remains the same, but the ON-time duration changes.
 ### Conclusion
-
+The purpose of this lab is to explore the fundamentals of microcontrollers using the Arduino RedBoard. Microcontrollers are small computing devices that can process inputs, execute programmed instructions, and control output components. In this experiment, we used the Arduino IDE to program the microcontroller, focusing on key functions such as digital output, analog input, and Pulse Width Modulation (PWM). The primary goal was to control an LED using various input devices, including a potentiometer and a photoresistor. By analyzing different circuit configurations, we gained hands-on experience with converting analog signals to digital outputs and understanding the persistence of vision effect. This lab provided essential knowledge of embedded systems, which are widely used in industrial automation, IoT applications, and consumer electronics.
