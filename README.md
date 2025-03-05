@@ -18,15 +18,15 @@ The purpose of this lab is to explore the fundamentals of microcontrollers using
 
 &nbsp; &nbsp; &nbsp; &nbsp; o RedBoard
 
-  o Photoresistor
+&nbsp; &nbsp; &nbsp; &nbsp; o Photoresistor
   
-  o An LED
+&nbsp; &nbsp; &nbsp; &nbsp; o An LED
   
-  o A 10 kΩ potentiometers
+&nbsp; &nbsp; &nbsp; &nbsp; o A 10 kΩ potentiometers
   
-  o A momentary button
+&nbsp; &nbsp; &nbsp; &nbsp; o A momentary button
   
-  o Resistors: 10 kΩ
+&nbsp; &nbsp; &nbsp; &nbsp; o Resistors: 10 kΩ
 #### Objective: Familiarize yourself with the Arduino IDE and Red Board (Arduino UNO).
 Task:
 
