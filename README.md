@@ -42,6 +42,7 @@ Then, we selected the board Arduino UNO (Tools>Board>Arduino Uno) and the correc
 To access the code, we opened the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
 After connecting the Arduino, we built a simple circuit by connecting a 330Ω and an LED in series to pin 13 in our RedBoard, making sure to connect the ground. The circuit with the LED light flashing on is pictured below.
 
+![LED On](https://github.com/meganfister/Lab5/blob/main/Lab%205%20LED%20On.jpg)
 
 With the uploaded code, our LED flashes with a delay. We gradually reduced the initial 1000 ms delay until the blinking was so rapid that the LED appeared to stay continuously illuminated. The final delay was set to 11 ms. The updated code is shown below.
 ```c++
@@ -89,6 +90,7 @@ void loop() {
 Next, without taking apart our previous circuit, we connected our potentiometer to power (5V and Ground) with the variable resistance pin connected to A0. This connection is described in the program, the
 example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the SparkFun Inventor’s kit book. Then, we opened the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and ran it on the Arduino. To demonstrate this program operating properly, we opened the serial monitor (Tools>Serial Monitor) and watched the values vary between 0 and 1023 as we turned the potentiometer. We made sure to verify that the Baud Rate on the serial monitor is 9600bps. Pictured below is the circuit we built to control an LED with a potentiometer.
 
+![Potentiometer](https://github.com/meganfister/Lab5/blob/main/Lab%205%20Potentiometer.jpg)
 
 Bloew is the code to control the LED and set the blinking time to the value read from the potentiometer.
 ```c++
@@ -131,6 +133,9 @@ void loop() {
 ##### Part 3 – Controlling an LED with a photoresistor
 Using the program from part 2, we replaced the potentiometer with a photoresistor in series with a 10 kΩ resistor. We connected the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input is connected to the node between the photodetector and the resistor. We used different objects to block the light on the photoresistor. The minimum value we detected with this circuit was 532 and the maximum analog value we detected was 826. Pictured below is the circuit with both the photoresistor covered and uncovered.
 
+![Photoresistor Covered](https://github.com/meganfister/Lab5/blob/main/Lab%205%20Covering%20PR.jpg)
+
+![Photoresistor Uncovered](https://github.com/meganfister/Lab5/blob/main/Lab%205%20Uncovering%20PR.jpg)
 
 We added an if else statement to our code (as shown in the SparkFun Inventor’s kit book) to turn on the LED only when the brightness sensed by the photoresistor is low, as a night light would work. The updated code is shown below.
 ```c++
@@ -176,12 +181,18 @@ else{
 }
 ```
 ##### Part 4 - LED Dimmer Using PWM
-Using the circuit from Part 2 with the potentiometer, we changed the LED pin to one that is PWM capable.
-2. Read the voltage from the potentiometer and map the voltage value,from 0 to 1023, to a value from 0 to
-255 using the function map(value, fromLow, fromHigh, toLow, toHigh). Write the mapped
-value to the LED pin using the function analogWrite(pin, mappedvalue).
+Using the circuit from Part 2 with the potentiometer, we changed the LED connection to a PWM-capable pin to enable brightness control. We read the voltage from the potentiometer and used the map() function to scale its value from the 0–1023 range (analog input) to a 0–255. Finally, we used the analogWrite() function to send the mapped value to the LED pin, allowing the LED’s brightness to vary based on the potentiometer’s position.
+The built circuit is pictured below.
+
+![LED Dimmer using PWM](https://github.com/meganfister/Lab5/blob/main/Lab%205%20LED%20Dimmer%20using%20PWM.jpg)
 
 Finally, we connected the oscilloscope to the LED pin and observed that the signal and LED brightness both increased as we turned the knob of the potentiometer. The graphs from the oscilloscope are pictured below.
+
+![PWM Low](https://github.com/meganfister/Lab5/blob/main/Lab%205%20PWM%20Low.jpg)
+
+![PWM High](https://github.com/meganfister/Lab5/blob/main/Lab%205%20PWM%20High.jpg)
+
+Below is the adjusted code for adjusting the brightness of the LED with the potentiometer.
 
 ```c++
 /*
@@ -223,11 +234,13 @@ int mappedvalue = map(sensorValue, 0, 1023, 0, 225);
 #### Part 1 - Blinking an LED
 Open the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
 
-a. What does this program do?
+_a. What does this program do?_
 
-b. What are the major sections of the computer program and what does each section do?
+Turns an LED on for one second, then off for one second, repeatedly.
 
-Your LED flashes with a delay from the uploaded code. Decrease this delay (after both write instructions) until the LED just stops blinking—that is until the light is still blinking but appears to stay constantly illuminated.
+_b. What are the major sections of the computer program and what does each section do?_
+
+The first section of the program is setup. It initializes digital pin LED_BUILTIN as an output. The next section is a loop that runs forever. It turns the LED on by making the voltage high, waits for a set period of time (currently one second) and then it turns the LED off by making the voltage slow and waits another second before repeating.
 
 _a. What is the value of your delay now?_
 
@@ -268,7 +281,9 @@ LOW (0) – Typically 0V in Arduino.
 
 _c. What happens to the Serial Monitor Refresh rate as you move the potentiometer to control the LED blinking time?_
 
-**The Serial Monitor refresh rate changes depending on the delay between each reading. As the potentiometer's resistance changes:**
+The Serial Monitor refresh rate changes depending on the delay between each reading. 
+
+As the potentiometer's resistance changes:
 
 If the delay increases, the serial monitor updates slower.
 
