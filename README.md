@@ -79,15 +79,6 @@ b. Demonstrate this program operating properly using the serial monitor (Tools>S
 that the Baud Rate on the serial monitor is 9600bps.
 c. Include the code to control the LED and set the blinking time to the value read from the
 potentiometer.
-##### Part 3 – Controlling an LED with a photoresistor
-1. Use the program from part 2 and replace the potentiometer with a photoresistor in series with a 10 kΩ resistor. Connect the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input should be connected to the node between the photodetector and the resistor.
-
-3. Try different objects to block the light on the photoresistor. What are the minimum and maximum analog values you can detect with this circuit?
-
-4. Use an if else statement as shown in the SparkFun Inventor’s kit book to turn on the LED only when the brightness sensed by the photoresistor is low. As a night light would work.
-### Results
-
-Part 2
 ```c++
 /*
   AnalogReadSerial
@@ -125,7 +116,11 @@ void loop() {
 }
 ```
 
-Part 3
+##### Part 3 – Controlling an LED with a photoresistor
+Using the program from part 2, we replaced the potentiometer with a photoresistor in series with a 10 kΩ resistor. We connected the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input is connected to the node between the photodetector and the resistor. We used different objects to block the light on the photoresistor. The minimum value we detected with this circuit was 532 and the maximum analog value we detected was 826. Pictured below is the circuit with both the photoresistor covered and uncovered.
+
+
+We added an if else statement to our code (as shown in the SparkFun Inventor’s kit book) to turn on the LED only when the brightness sensed by the photoresistor is low, as a night light would work. The updated code is shown below.
 ```c++
 /*
   AnalogReadSerial
@@ -168,8 +163,15 @@ else{
 }
 }
 ```
+##### Part 4 - LED Dimmer Using PWM
+Using the circuit from Part 2 with the potentiometer, we changed the LED pin to one that is PWM capable.
+2. Read the voltage from the potentiometer and map the voltage value,from 0 to 1023, to a value from 0 to
+255 using the function map(value, fromLow, fromHigh, toLow, toHigh). Write the mapped
+value to the LED pin using the function analogWrite(pin, mappedvalue).
+3. Discussion Question:
+Connect the oscilloscope to the LED pin and observe and record what happens to the signal and the LED
+brightness when you turn the knob of the potentiometer.
 
-Part 4
 ```c++
 /*
   AnalogReadSerial
