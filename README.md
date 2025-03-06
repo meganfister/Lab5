@@ -6,7 +6,7 @@ Aashika Uppala, Megan Fister
 
 ### Introduction
 The purpose of this lab is to explore the fundamentals of microcontrollers using the Arduino RedBoard. Microcontrollers are small computing devices that can process inputs, execute programmed instructions, and control output components. In this experiment, we used the Arduino IDE to program the microcontroller, focusing on key functions such as digital output, analog input, and Pulse Width Modulation (PWM). The primary goal was to control an LED using various input devices, including a potentiometer and a photoresistor. By analyzing different circuit configurations, we gained hands-on experience with converting analog signals to digital outputs and understanding the persistence of vision effect. This lab provided essential knowledge of embedded systems, which are widely used in industrial automation, IoT applications, and consumer electronics.
-### Methods
+### Methods/Results
 #### Instruments
 • A 330Ω resistor
 
@@ -36,58 +36,20 @@ Task:
 
 • Familiarize yourself with the concept of pulse width modulation.
 ##### Part 1 - Blinking an LED
-1. Assemble your RedBoard and breadboard onto the sparkfun base.
-2. Connect the RedBoard to the computer and start the Arduino IDE on the computer.
-3. Select the board Arduino UNO (Tools>Board>Arduino Uno) and the correct COM port (Tools>Port>COM?).
-Figure 1. PWM FOR 0%, 25%, 50%, 75%, AND 100%
-(https://docs.arduino.cc/learn/microcontrollers/analog-output/)
-4. Open the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
+First, we assembled our RedBoard and breadboard onto the sparkfun base.
+Next, we connected the RedBoard to the computer using the USB port and started the Arduino IDE on the computer.
+Then, we selected the board Arduino UNO (Tools>Board>Arduino Uno) and the correct COM port (Tools>Port>COM?).
+To access the code, we opened the blink program (File>Examples>Basics>Blink) and download it to the Arduino.
+After connecting the Arduino, we built a simple circuit by connecting a 330Ω and an LED in series to pin 13 in our RedBoard, making sure to connect the ground. The circuit with the LED light flashing on is pictured below.
 
-##### Part 2 – Controlling an LED with a potentiometer
-1. Open the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and run it on the
-Arduino.
-a. Do not take apart your previous circuit and connect your potentiometer to power (5V and Ground)
-with the variable resistance pin connected to A0. This connection is described in the program, the
-example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the
-SparkFun Inventor’s kit book.
-b. Demonstrate this program operating properly using the serial monitor (Tools>Serial Monitor). Verify
-that the Baud Rate on the serial monitor is 9600bps.
-c. Include the code to control the LED and set the blinking time to the value read from the
-potentiometer.
-##### Part 3 – Controlling an LED with a photoresistor
-1. Use the program from part 2 and replace the potentiometer with a photoresistor in series with a 10 kΩ resistor. Connect the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input should be connected to the node between the photodetector and the resistor.
 
-3. Try different objects to block the light on the photoresistor. What are the minimum and maximum analog values you can detect with this circuit?
-
-4. Use an if else statement as shown in the SparkFun Inventor’s kit book to turn on the LED only when the brightness sensed by the photoresistor is low. As a night light would work.
-### Results
-
-Part 1
+With the uploaded code, our LED flashes with a delay. We gradually reduced the initial 1000 ms delay until the blinking was so rapid that the LED appeared to stay continuously illuminated. The final delay was set to 11 ms. The updated code is shown below.
 ```c++
 /*
   Blink
 
   Turns an LED on for one second, then off for one second, repeatedly.
 
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://www.arduino.cc/en/Main/Products
-
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-
-
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
 
 // the setup function runs once when you press reset or power the board
@@ -105,6 +67,25 @@ void loop() {
 }
 ```
 
+
+##### Part 2 – Controlling an LED with a potentiometer
+Next, we opened the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and run it on the
+Arduino.
+a. Do not take apart your previous circuit and connect your potentiometer to power (5V and Ground)
+with the variable resistance pin connected to A0. This connection is described in the program, the
+example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the
+SparkFun Inventor’s kit book.
+b. Demonstrate this program operating properly using the serial monitor (Tools>Serial Monitor). Verify
+that the Baud Rate on the serial monitor is 9600bps.
+c. Include the code to control the LED and set the blinking time to the value read from the
+potentiometer.
+##### Part 3 – Controlling an LED with a photoresistor
+1. Use the program from part 2 and replace the potentiometer with a photoresistor in series with a 10 kΩ resistor. Connect the 5V pin to the photoresistor, ground to the resistor, and A0 to the node between them. The analog input should be connected to the node between the photodetector and the resistor.
+
+3. Try different objects to block the light on the photoresistor. What are the minimum and maximum analog values you can detect with this circuit?
+
+4. Use an if else statement as shown in the SparkFun Inventor’s kit book to turn on the LED only when the brightness sensed by the photoresistor is low. As a night light would work.
+### Results
 
 Part 2
 ```c++
