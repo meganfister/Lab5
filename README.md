@@ -50,6 +50,23 @@ With the uploaded code, our LED flashes with a delay. We gradually reduced the i
 
   Turns an LED on for one second, then off for one second, repeatedly.
 
+  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
+  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
+  the correct LED pin independent of which board is used.
+  If you want to know what pin the on-board LED is connected to on your Arduino
+  model, check the Technical Specs of your board at:
+  https://www.arduino.cc/en/Main/Products
+
+  modified 8 May 2014
+  by Scott Fitzgerald
+  modified 2 Sep 2016
+  by Arturo Guadalupi
+  modified 8 Sep 2016
+  by Colby Newman
+
+  This example code is in the public domain.
+
+  https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
 
 // the setup function runs once when you press reset or power the board
@@ -69,16 +86,11 @@ void loop() {
 
 
 ##### Part 2 – Controlling an LED with a potentiometer
-Next, we opened the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and run it on the
-Arduino.
-a. Do not take apart your previous circuit and connect your potentiometer to power (5V and Ground)
-with the variable resistance pin connected to A0. This connection is described in the program, the
-example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the
-SparkFun Inventor’s kit book.
-b. Demonstrate this program operating properly using the serial monitor (Tools>Serial Monitor). Verify
-that the Baud Rate on the serial monitor is 9600bps.
-c. Include the code to control the LED and set the blinking time to the value read from the
-potentiometer.
+Next, without taking apart our previous circuit, we connected our potentiometer to power (5V and Ground) with the variable resistance pin connected to A0. This connection is described in the program, the
+example page at https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/, or in the SparkFun Inventor’s kit book. Then, we opened the sample program Analog Read Serial (Examples>Basics>AnalogReadSerial) and ran it on the Arduino. To demonstrate this program operating properly, we opened the serial monitor (Tools>Serial Monitor) and watched the values vary between 0 and 1023 as we turned the potentiometer. We made sure to verify that the Baud Rate on the serial monitor is 9600bps. Pictured below is the circuit we built to control an LED with a potentiometer.
+
+
+Bloew is the code to control the LED and set the blinking time to the value read from the potentiometer.
 ```c++
 /*
   AnalogReadSerial
@@ -168,9 +180,8 @@ Using the circuit from Part 2 with the potentiometer, we changed the LED pin to 
 2. Read the voltage from the potentiometer and map the voltage value,from 0 to 1023, to a value from 0 to
 255 using the function map(value, fromLow, fromHigh, toLow, toHigh). Write the mapped
 value to the LED pin using the function analogWrite(pin, mappedvalue).
-3. Discussion Question:
-Connect the oscilloscope to the LED pin and observe and record what happens to the signal and the LED
-brightness when you turn the knob of the potentiometer.
+
+Finally, we connected the oscilloscope to the LED pin and observed that the signal and LED brightness both increased as we turned the knob of the potentiometer. The graphs from the oscilloscope are pictured below.
 
 ```c++
 /*
